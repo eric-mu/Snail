@@ -1,2 +1,3 @@
 # Snail
-A simple script which might not be that fast.
+
+A simple script language which might not run that fast.
