@@ -1,13 +1,13 @@
 Chunk ::= Block
-Block ::= (Statement)+
-Statement ::= Import | Assignment | Condition | Forloop | Whileloop | Functiondef | Classdef | Processkeys
-
+Block ::= Statement+ | try '{' Statement* '}' (except '{' Statement* '}')? (finally '{' Statement* '}')?
+Statement ::= Import | Assignment | Condition | Forloop | Whileloop | Functiondef | Classdef | Return | Processkeys
 Import ::= import Name (as Name)?
 Assignments ::= Assignment (',' Assignment)*
 Assignment ::= (Vars '=')? Expressions
 Condition ::= if Expression '{' Block? '}' (elseif Expression '{' Block? '}')* (else '{' Block? '}')?
 Foroop ::= for Names in Expressions '{' Block? '}'
 Whileloop ::= while Expression '{' Block? '}'
+Return ::= return Expressions?
 Processkeys ::= continue | break | yield | pass
 
 Expressions ::= Expression (',' Expression)*
