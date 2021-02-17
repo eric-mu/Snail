@@ -47,6 +47,9 @@ func (lexer *Lexer) NextToken() (line, kind int, token string) {
 
 	c := lexer.chunk[0]
 	switch c {
+	case ';':
+		lexer.forward(1)
+		return lexer.line, TokenSepSemi, ";"
 	case ',':
 		lexer.forward(1)
 		return lexer.line, TokenSepComma, ","

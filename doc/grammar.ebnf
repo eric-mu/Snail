@@ -1,6 +1,8 @@
 Chunk ::= Block
-Block ::= Statement+ | try '{' Statement* '}' except '{' Statement* '}' (finally '{' Statement* '}')?
-Statement ::= Import | Assignment | Condition | Forloop | Whileloop | Functiondef | Classdef | Return | Processkeys
+Block ::= Statement*
+Empty ::= ';'
+Statement ::= Empty | Trycatch | Import | Assignment | Condition | Forloop | Whileloop | Functiondef | Classdef | Return | Processkeys
+Trycatch ::= try '{' Statement* '}' except '{' Statement* '}' (finally '{' Statement* '}')?
 Import ::= import Name (as Name)?
 Assignments ::= Assignment (',' Assignment)*
 Assignment ::= (Vars '=')? Expressions

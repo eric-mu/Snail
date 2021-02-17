@@ -9,6 +9,7 @@ package lexer
 const (
 	TokenEOF = iota // end-of-file
 
+	TokenSepSemi   // ;
 	TokenSepComma  // ,
 	TokenSepDot    // .
 	TokenSepDomain // ::
