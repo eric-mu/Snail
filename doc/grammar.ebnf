@@ -18,7 +18,7 @@ Slice ::= Expression? ':' Expression? ':' Expression?
 Names ::= Name (',' Name)*
 Literaltypes ::= nil | Bool | String | Bytes | Number | Tuple | List | Dict
 
-Functioncall ::= Var Args
+Functioncall ::= Var '(' Expressions? (',' '*' Expression)? (',' '**' Expression)? ')'
 Functiondef ::= func (name '::')? Name '(' Params? ')' '{' Block? '}'
 Args ::= '(' Expressions? ')'
 Params ::= Names (',' '*' Name)? (',' '**' Name)?
@@ -30,11 +30,7 @@ Classdef ::= class Name '{' (Name ('=' Expression)?)* '}'
 Bool ::= true | false
 String ::= 's'? '"' [^"]* '"' | 's'? "'" [^']* "'"
 Bytes ::= 'b' '"' [^"]* '"' | 'b' "'" [^']* "'"
-Number ::= ('0' | '0x' | '0X')? [0-9]+ ('.' [0-9]*)?
+Number ::= [xX] [0-9a-fA-F]* (.[0-9a-fA-F]*)? ([pP][+\-]? [0-9+])? | [0-9]* (.[0-9]*)? ([eE][+\-]? [0-9]+)?
 Tuple ::= Expression ',' | '(' Expression ',' ')' | Expression (',' Expression)+ | '(' Expression (',' Expression)+ ')'
 List ::= '[' Expressions? ']'
 Dict ::= '{' Expression ':' Expression (',' Expression ':' Expression)* '}'
-
-Whitespace ::= Space | Comment
-Space ::= #x9 | #xA | #xD | #x20
-Comment ::= '/*' ( [^*] | '*'+ [^*/] )* '*'* '*/'

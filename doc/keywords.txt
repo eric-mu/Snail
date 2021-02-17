@@ -13,6 +13,7 @@ except
 false
 finally
 for
+func
 from
 if
 import

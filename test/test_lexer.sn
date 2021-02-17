@@ -1,0 +1,28 @@
+print("hello world") // a
+/* xxx
+
+*/
+a = 1.2e-1
+b = a + c * b
+c = "strings"
+d = 'strings'
+//e = b"bytes"
+//f = b'bytes'
+
+func fun(a, b, *c, **d) {
+    return a + b
+}
+
+c = fun(x, y, *a, **b)
+fun(x, y)
+
+class cls {
+    a
+    b = 1
+    c = "aaa"
+}
+
+a = cls()
+b = a.name
+c = a[0]
+d = a[b]
